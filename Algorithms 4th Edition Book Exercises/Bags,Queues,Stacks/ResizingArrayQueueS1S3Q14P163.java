@@ -1,8 +1,8 @@
-class ResizingArrayQueueOfStrings<Item> {
+class ResizingArrayQueue<Item> {
 	Item [] queue; 
 	int start, end;
 	
-	public ResizingArrayQueueOfStrings() {
+	public ResizingArrayQueue() {
 		// TODO Auto-generated constructor stub
 		queue = ( Item[] ) new Object[2];
 		end = 0;
@@ -48,9 +48,9 @@ class ResizingArrayQueueOfStrings<Item> {
 	}
 }
 
-public class ResizingArrayQueueOfStringsS1S3Q14P163 {
+public class ResizingArrayQueueS1S3Q14P163 {
 	public static void main(String[] args) {
-		ResizingArrayQueueOfStrings<String> queue = new ResizingArrayQueueOfStrings();
+		ResizingArrayQueue<String> queue = new ResizingArrayQueue();
 		
 		queue.enqueue("First");
 		queue.enqueue("Second");
