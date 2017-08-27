@@ -51,7 +51,6 @@ class linkListS1S3Q19<Item> {
 	public String toString() {
 		// TODO Auto-generated method stub
 		Node current = first;
-		int count = 1;
 		String temp = "";
 		
 		while(current.next != null) {
