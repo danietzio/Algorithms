@@ -1,11 +1,11 @@
 class linkListS1S3Q19<Item> {
 	Node first;
 	
-	private class Node {
+	protected class Node {
 		Item item;
 		Node next;
 	}
-	
+
 	void insert(Item item) {
 		Node temp = new Node();
 		

@@ -1,43 +1,5 @@
-class linkListS1S3Q20<Item> {
-	Node first;
-	
-	private class Node {
-		Item item;
-		Node next;
-	}
-	
-	void insert(Item item) {
-		Node temp = new Node();
+class linkListS1S3Q20<Item> extends linkListS1S3Q19<Item> {
 		
-		temp.item = item;
-		temp.next = null;
-		
-		if(first != null) {
-			Node end = findLastNode();
-			end.next = temp;
-		} else {
-			first = temp;
-		}
-		
-	}
-	
-	Item removeLastNode() {
-		Node current = first;
-		
-		// Finding node before last node
-		while(current.next.next != null) {
-			current = current.next;
-		}
-		
-		// Get last node data
-		Item temp = current.next.item;
-		
-		// Removing last node using garbage collector
-		current.next = null;
-		
-		return temp;
-	}
-	
 	// Question 1.3.20 answer
 	Item remove_Kth_Node(int k) {
 		int count = 1;
@@ -60,31 +22,6 @@ class linkListS1S3Q20<Item> {
 			// Returning value of the removed node
 			return item;
 		}
-	}
-	
-	Node findLastNode() {
-		Node current = first;
-		
-		// Find last node
-		while(current.next != null) { current = current.next; }
-		
-		return current;
-	}
-	
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		Node current = first;
-		String temp = "";
-		
-		while(current.next != null) {
-			temp += current.item + " , ";
-			current = current.next;
-		}
-		
-		temp  += current.item;
-		
-		return temp;
 	}
 }
 
