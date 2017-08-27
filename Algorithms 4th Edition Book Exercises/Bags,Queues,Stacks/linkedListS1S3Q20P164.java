@@ -1,4 +1,4 @@
-class linkListS1S3Q19<Item> {
+class linkListS1S3Q20<Item> {
 	Node first;
 	
 	private class Node {
@@ -18,9 +18,9 @@ class linkListS1S3Q19<Item> {
 		} else {
 			first = temp;
 		}
+		
 	}
 	
-	// Answer of question 1.3.19
 	Item removeLastNode() {
 		Node current = first;
 		
@@ -38,6 +38,30 @@ class linkListS1S3Q19<Item> {
 		return temp;
 	}
 	
+	// Question 1.3.20 answer
+	Item remove_Kth_Node(int k) {
+		int count = 1;
+		Node current = first;
+		
+		while( count < k && (current.next.next != null) ) {
+			current = current.next;
+			count++;
+		}
+		
+		if(count != k) {
+			// Doesn't exists
+			return (Item) null;
+		} else {
+			Item item = current.next.item;
+			
+			// Removing k-th element with garbage collector
+			current.next = current.next.next;
+			
+			// Returning value of the removed node
+			return item;
+		}
+	}
+	
 	Node findLastNode() {
 		Node current = first;
 		
@@ -51,7 +75,6 @@ class linkListS1S3Q19<Item> {
 	public String toString() {
 		// TODO Auto-generated method stub
 		Node current = first;
-		int count = 1;
 		String temp = "";
 		
 		while(current.next != null) {
@@ -60,15 +83,15 @@ class linkListS1S3Q19<Item> {
 		}
 		
 		temp  += current.item;
+		
 		return temp;
 	}
 }
 
-public class linkedListS1S3Q19P164 {
-	
+public class linkedListS1S3Q20P164 {
 	
 	public static void main(String args[]) {
-		linkListS1S3Q19<String> list = new linkListS1S3Q19();
+		linkListS1S3Q20<String> list = new linkListS1S3Q20();
 		
 		list.insert("First");
 		list.insert("Second");
@@ -78,9 +101,10 @@ public class linkedListS1S3Q19P164 {
 		
 		StdOut.println(list.toString());
 		
-		list.removeLastNode();
+		// Removing k-th element from the linked list
+		list.remove_Kth_Node(2);
 		
-		StdOut.println("After removing last node");
+		StdOut.println("After removing K-th node");
 		StdOut.println(list.toString());
 	}
 }
