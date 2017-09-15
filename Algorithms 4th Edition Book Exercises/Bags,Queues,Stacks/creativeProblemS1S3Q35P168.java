@@ -43,7 +43,7 @@ class RandomQueue<Item> extends ResizingArrayQueue<Item> {
 	}
 }
 
-public class creativeProblemsS1S3Q35P168 {
+public class creativeProblemS1S3Q35P168 {
 	public static void main(String [] args) {
 		
 		// Client usage of the random queue
