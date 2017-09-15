@@ -46,6 +46,18 @@ class ResizingArrayQueue<Item> {
 	int size() { // number of items in the queue
 		return end - start;
 	}
+	
+	@Override
+	public String toString() {
+		
+		String temp = "";
+		
+		for( int i = 0; i < size(); i++) {
+			temp += queue[i] + " , ";
+		}
+		
+		return temp;
+	}
 }
 
 public class ResizingArrayQueueS1S3Q14P163 {
