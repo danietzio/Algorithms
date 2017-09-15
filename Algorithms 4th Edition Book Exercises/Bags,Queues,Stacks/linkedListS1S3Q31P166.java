@@ -61,21 +61,31 @@ class linkListS1S3Q31<Item> {
 	Item remove_from_end() {
 		Node current = first;
 		
-		// Finding last node in the linked list
-		while( current.next != null ) {
-			current = current.next;
+		if( current != null ) {
+			
+			// Finding last node in the linked list
+			while( current.next != null ) {
+				current = current.next;
+			}
+			
+			// Keeping value of the last node
+			Item temp = current.item;
+			
+			// Detaching the last node from the list
+			if(current != first) {
+				current.previous.next = null;
+			} else {
+				first = null;
+			}
+			
+			// Removing last node with garbage collector
+			current = null;
+			
+			return temp;
+
+		} else {
+			return (Item)null;
 		}
-		
-		// Keeping value of the last node
-		Item temp = current.item;
-		
-		// Detaching the last node from the list
-		current.previous.next = null;
-		
-		// Removing last node with garbage collector
-		current = null;
-		
-		return temp;
 	}
 	
 	Item remove_from_start() {
