@@ -79,17 +79,31 @@ class linkListS1S3Q31<Item> {
 	}
 	
 	Item remove_from_start() {
+
+		if( first != null ) {
+			Item temp = null;
+					
+			// Checking whether first noed is the only node in the list or not !
+			if( first.next != null ) {
+				
+				// Keeping value of the last node
+				temp = first.item;
+				
+				// Changing head of the list
+				first = first.next;
+				
+				// Removing old first node with garbage collector
+				first.previous = null;
+	
+			} else { 
+				temp = first.item;
+				first = null;
+			}
+			
+			return temp;
+		}
 		
-		// Keeping value of the last node
-		Item temp = first.item;
-		
-		// Changing head of the list
-		first = first.next;
-		
-		// Removing old first node with garbage collector
-		first.previous = null;
-		
-		return temp;
+		return (Item)null;
 	}
 	
 	@Override
